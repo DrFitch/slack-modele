@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
  * Checks verification token and opens a dialog to capture more info.
  */
 app.post('/command', async (req, res) => {
+  debug('req', req);
   // Verify the signing secret
   if (!signature.isVerified(req)) {
     debug('Verification token mismatch');
